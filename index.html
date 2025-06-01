@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="DGN: Reinforcement Learning via Implicit Imitation Guidance">
+  <meta name="keywords" content="DGN, RL, Reinforcement Learning, Data-Guided Noise, Guided Exploration, Exploration">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DGN: Reinforcement Learning via Implicit Imitation Guidance</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+
+    <style>
+    /* A thicker, darker rule */
+    hr.thick-dark {
+      /* border: 0;               /* Remove the default 1-px inset border */
+      height: 1px;             /* Thickness (any unit works) */
+      background-color: #949393;  /* Dark grey / almost black */
+      margin: 1rem 0;          /* Optional spacing */
+    }
+    </style>
+
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">DGN: Reinforcement Learning via Implicit Imitation Guidance</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              Perry Dong*,
+            </span>
+            <span class="author-block">
+              Alec M. Lessing*,
+            </span>
+            <span class="author-block">
+              Annie S. Chen*,
+            </span>
+            <span class="author-block">
+              Chelsea Finn
+            </span>
+          </div>
+
+
+          <div class="is-size-5 publication-authors">
+            
+            <div style="width: 30%; margin: 0 auto; padding: 5px;">
+              <img src="static/images/iris.png" alt="IRIS Lab">
+            </div>
+            <div>
+            <span class="author-block">Stanford University</span>
+            </div>
+          </div>
+
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2011.12948"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2011.12948"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/google/nerfies"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="container">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-4">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            We study the problem of efficient reinforcement learning, where prior data such as demonstrations are provided for initialization in lieu of a dense reward signal. A natural approach is to incorporate an imitation learning objective, either as regularization during training or to acquire a reference policy. However, imitation learning objectives can ultimately degrade long-term performance, as it does not directly align with reward maximization. In this work, we propose to use prior data solely for guiding exploration via noise added to the policy, sidestepping the need for explicit behavior cloning constraints. The key insight in our framework, <strong>Data-Guided Noise (DGN)</strong>, is that  <strong> demonstrations are most useful for identifying which actions should be explored, rather than forcing the policy to take certain actions. </strong> Our approach achieves up to 2-3x improvement over prior methods for RL from offline data across seven simulated continuous control tasks.
+          </p>
+        </div>
+      </div>
+      <hr class="thick-dark">
+       <br>
+    </div>
+
+    
+    <!--/ Abstract. -->
+  </section>
+
+
+  <div class="container">
+
+    <div class="container" style="width: 60%; margin: 0 auto; padding: 5px;">
+
+      <br>
+      <hr class="thick-dark">
+      <br>
+
+      <img src="./static/images/method4.png">
+      <br>
+      <div class="content has-text-justified" style="width: 90%; margin: 0 auto; padding: 5px;">
+        <p>
+        <strong>Method Overview.</strong> DGN guides exploration by learning a state-conditioned noise distribution that uses the difference between expert actions and the current RL policy and using this model to provide implicit imitation signals for exploration. 
+      </p>
+      </div>
+      <br>
+
+      <hr class="thick-dark">
+       <br>
+    </div>
+    
+</div>
+
+
+
+
+
+
+
+  <section class="container">
+    <div class="container">
+      <div class="container" style="width: 90%; margin: 0 auto; padding: 10px;">
+        <h6 class="title is-3" style="text-align: center;">Experiments</h6>
+      </div>
+
+      <div class="container" style="width: 70%; margin: 0 auto; padding: 20px;">
+        <img src="./static/images/dgn_site_robomimic.png">
+        <div class="container" style="width: 90%; margin: 0 auto; padding: 0px;">
+        <p>
+        <strong> Performance on Robomimic.</strong> On all four tested robomimic tasks, DGN consistently exceeds or matches the performance of the best baseline—even as the best baseline method varies by task. The relative benefit of DGN over RLPD and other baselines is larger on the more difficult tasks: <samp>square</samp>, <samp>tool hang</samp>.
+      </p>
+      </div>
+      <br>
+
+      <img src="./static/images/dgn_site_adroit.png">
+      <div class="container" style="width: 90%; margin: 0 auto; padding: 0px;">
+      <p>
+      <strong> Performance on Adroit.</strong> DGN matches or exceeds the performance of all baselines on tasks from the adroit suite. The relative performance of DGN is best on the hardest, most long-horizon task: <samp> relocate </samp>.
+    </p>
+
+
+
+    </div>
+
+          <hr class="thick-dark">
+      </div>
+  </section>
+
+
+
+
+
+<section class="section" id="BibTeX">
+  
+  <div class="container is-max-desktop content" style="width: 90%; margin: 0 auto; padding: 10px;">
+    
+    <h2 class="title">BibTeX</h2>
+    TODO: replace with actual citation once we have the link
+    <pre><code>@article{park2021nerfies,
+  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
+  title     = {Nerfies: Deformable Neural Radiance Fields},
+  journal   = {ICCV},
+  year      = {2021},
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <p>Page template borrowed from <a href="https://nerfies.github.io/"><span class="dnerf">Nerfies</span></a> <!-- and <a href="https://robot-parkour.github.io/"><span class="dnerf">Robot Parkour Learning</span></a>. --></p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
