@@ -92,7 +92,7 @@
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="https://arxiv.org/pdf/2011.12948"
+                <a href="https://arxiv.org/pdf/2506.07505"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -101,7 +101,7 @@
                 </a>
               </span>
               <span class="link-block">
-                <a href="https://arxiv.org/abs/2011.12948"
+                <a href="https://arxiv.org/abs/2506.07505"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
@@ -111,7 +111,7 @@
               </span>
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://github.com/google/nerfies"
+                <a href="https://github.com/alessing/dgn"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -161,7 +161,7 @@
       <br>
       <div class="content has-text-justified" style="width: 90%; margin: 0 auto; padding: 5px;">
         <p>
-        <strong>Method Overview.</strong> DGN guides exploration by learning a state-conditioned noise distribution that uses the difference between expert actions and the current RL policy and using this model to provide implicit imitation signals for exploration. 
+        <strong>Method Overview.</strong> DGN learns a state-conditioned noise distribution using the difference between expert actions and RL policy actions. DGN then uses this learned distribution to provide implicit imitation signals for exploration. 
       </p>
       </div>
       <br>
@@ -216,12 +216,14 @@
   <div class="container is-max-desktop content" style="width: 90%; margin: 0 auto; padding: 10px;">
     
     <h2 class="title">BibTeX</h2>
-    TODO: replace with actual citation once we have the link
-    <pre><code>@article{park2021nerfies,
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
+    <pre><code>@misc{dataguidednoise2025,
+      title={Reinforcement Learning via Implicit Imitation Guidance}, 
+      author={Perry Dong and Alec M. Lessing and Annie S. Chen and Chelsea Finn},
+      url={https://arxiv.org/abs/2506.07505}, 
+      year={2025},
+      primaryClass={cs.LG},
+      archivePrefix={arXiv},
+      eprint={2506.07505},
 }</code></pre>
   </div>
 </section>
