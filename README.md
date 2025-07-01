@@ -1,6 +1,6 @@
 # DGN
 
-This is the repository that contains source code for Data-Guided Noise (DGN).
+This is the repository that contains source code for the Data-Guided Noise (DGN) website.
 
 ```
 @misc{dataguidednoise2025,
