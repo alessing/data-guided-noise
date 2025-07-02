@@ -161,7 +161,7 @@
       <br>
       <div class="content has-text-justified" style="width: 90%; margin: 0 auto; padding: 5px;">
         <p>
-        <strong>Method Overview.</strong> DGN learns a state-conditioned noise distribution using the difference between expert actions and RL policy actions. DGN then uses this learned distribution to provide implicit imitation signals for exploration. 
+        <strong>Method Overview.</strong> DGN learns a state-conditioned noise distribution using the difference between expert actions and RL policy actions. DGN then uses this learned distribution to provide implicit imitation guidance for exploration. 
       </p>
       </div>
       <br>
@@ -171,8 +171,6 @@
     </div>
     
 </div>
-
-
 
 
 
@@ -197,6 +195,44 @@
       <div class="container" style="width: 90%; margin: 0 auto; padding: 0px;">
       <p>
       <strong> Performance on Adroit.</strong> DGN matches or exceeds the performance of all baselines on tasks from the adroit suite. The relative performance of DGN is best on the hardest, most long-horizon task: <samp> relocate </samp>.
+
+      <br>
+      <hr class="thick-dark">
+      <br>
+
+      <div class="container" style="width: 90%; margin: 0 auto; padding: 10px;">
+        <h6 class="title is-5" style="text-align: center;">Comparison to IBRL</h6>
+      </div>
+
+      DGN has similar performance to IBRL under optimal conditions. However, DGN is more robust. It is less susceptible to suboptimal training of a BC reference policy and better able to utilize suboptimal, multimodal demonstration data.
+
+      <div class="container" style="width: 83%; margin: 0 auto; padding: 0px;">
+        <img src="./static/images/ibrl.png">
+      </div>
+      <div class="container" style="width: 90%; margin: 0 auto; padding: 0px;">
+      <strong>IBRL Comparison with good (ph) demos.</strong> DGN nearly matches the performance of IBRL under optimal conditions. However, DGN outperforms IBRL with an undertrained BC reference policy. 
+      </div>
+
+
+      <div class="container" style="width: 80%; margin: 0 auto; padding: 0px;">
+        <img src="./static/images/ibrl_mh.png">
+      </div>
+
+      <div class="container" style="width: 90%; margin: 0 auto; padding: 0px;">
+      <strong>IBRL Comparison with worse, multimodal (mh) demos.</strong> When using a lower-quality, multimodal (mh) dataset, DGN has higher sample efficiency than IBRL.
+      </div>
+
+
+      <br>
+      <hr class="thick-dark">
+      <br>
+
+      <img src="./static/images/mean_ablation.png">
+
+      <div class="container" style="width: 90%; margin: 0 auto; padding: 0px;">
+      <strong>Full Residual Policy Learning Ablation.</strong> Learning a full residual policy (policy mean in addition to covariance) via imitation performs similarly to only learning the covariance.
+      </div>
+      
     </p>
 
 
@@ -206,6 +242,9 @@
           <hr class="thick-dark">
       </div>
   </section>
+
+
+  
 
 
 
