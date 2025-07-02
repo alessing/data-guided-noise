@@ -136,7 +136,7 @@
         <h2 class="title is-4">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We study the problem of efficient reinforcement learning, where prior data such as demonstrations are provided for initialization in lieu of a dense reward signal. A natural approach is to incorporate an imitation learning objective, either as regularization during training or to acquire a reference policy. However, imitation learning objectives can ultimately degrade long-term performance, as it does not directly align with reward maximization. In this work, we propose to use prior data solely for guiding exploration via noise added to the policy, sidestepping the need for explicit behavior cloning constraints. The key insight in our framework, <strong>Data-Guided Noise (DGN)</strong>, is that  <strong> demonstrations are most useful for identifying which actions should be explored, rather than forcing the policy to take certain actions. </strong> Our approach achieves up to 2-3x improvement over prior methods for RL from offline data across seven simulated continuous control tasks.
+            We study the problem of efficient reinforcement learning, where prior data such as demonstrations are provided for initialization in lieu of a dense reward signal. A natural approach is to incorporate an imitation learning objective, either as regularization during training or to acquire a reference policy. However, imitation learning objectives can ultimately degrade long-term performance, as it does not directly align with reward maximization. In this work, we propose to use prior data solely for guiding exploration via noise added to the policy, sidestepping the need for explicit behavior cloning constraints. The key insight in our framework, <strong>Data-Guided Noise (DGN)</strong>, is that <strong>demonstrations are most useful for identifying which actions should be explored, rather than forcing the policy to take certain actions. </strong> Our approach achieves up to 2-3x improvement over prior methods for RL from offline data across seven simulated continuous control tasks.
           </p>
         </div>
       </div>
@@ -186,7 +186,7 @@
         <img src="./static/images/dgn_site_robomimic.png">
         <div class="container" style="width: 90%; margin: 0 auto; padding: 0px;">
         <p>
-        <strong> Performance on Robomimic.</strong> On all four tested robomimic tasks, DGN consistently exceeds or matches the performance of the best baseline—even as the best baseline method varies by task. The relative benefit of DGN over RLPD and other baselines is larger on the more difficult tasks: <samp>square</samp>, <samp>tool hang</samp>.
+        <strong> Performance on Robomimic.</strong> On all four tested Robomimic tasks, DGN consistently exceeds or matches the performance of the best baseline—even as the best baseline method varies by task. The relative benefit of DGN over RLPD and other baselines is larger on the more difficult tasks: <samp>square</samp>, <samp>tool hang</samp>.
       </p>
       </div>
       <br>
@@ -194,7 +194,7 @@
       <img src="./static/images/dgn_site_adroit.png">
       <div class="container" style="width: 90%; margin: 0 auto; padding: 0px;">
       <p>
-      <strong> Performance on Adroit.</strong> DGN matches or exceeds the performance of all baselines on tasks from the adroit suite. The relative performance of DGN is best on the hardest, most long-horizon task: <samp> relocate </samp>.
+      <strong> Performance on Adroit.</strong> DGN matches or exceeds the performance of all baselines on tasks from the Adroit suite. The relative performance of DGN is best on the hardest, most long-horizon task: <samp>relocate</samp>.
 
       <br>
       <hr class="thick-dark">
